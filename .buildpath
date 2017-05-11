@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="ThinkPHP/Library/Think/Model"/>
+	<buildpathentry kind="src" path="ThinkPHP/Library/Think/Verify/bgs"/>
+	<buildpathentry kind="src" path="ThinkPHP/Library/Think/Verify/ttfs"/>
+	<buildpathentry kind="src" path="ThinkPHP/Mode/Api"/>
+	<buildpathentry kind="src" path="ThinkPHP/Library/Think/Db/Driver"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path="Application"/>
+	<buildpathentry kind="src" path="ThinkPHP/Mode/Sae"/>
+	<buildpathentry kind="src" path="ThinkPHP/Tpl"/>
+	<buildpathentry kind="src" path="ThinkPHP/Library/OT/TagLib"/>
+	<buildpathentry kind="src" path="ThinkPHP/Library/Think/Verify/zhttfs"/>
+</buildpath>

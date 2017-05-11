@@ -1,0 +1,325 @@
+<extend name="Base/common" />
+
+<block name="body">
+<div class="banner">
+	<div id="yc-mod-slider">
+		<div class="wrapper">
+			<div id="slideshow" class="box_skitter fn-clear">
+				<ul>
+					<volist name="home_adv" id="adv">
+					<li><img alt="Joomla模板与内容的融合设计" class="cubeRandom"
+						src="__ROOT__{$adv.cover_path}"
+						style="width: 100%; height: 450px;" /></li>
+					</volist>
+				</ul>
+			</div>
+			<script type="text/javascript"
+				src="__STATIC__/fouroad/js/slideshow.js"></script>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div id="con1">
+		<h1>{$category['_']['0'].title}</h1>
+		<h4>浏览我们的产品与解决方案，并了解 Shopex 能够为您做些什么</h4>
+		<volist name="home_one" id="one">
+		<div class="main_l">
+			<div class="main_img">
+				<img src="__ROOT__{$one.cover_path}">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$one.title}</h3>
+			<p>{$one.content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$one.description}</p>
+		</div>
+		</volist>
+		<!-- <div class="main_l">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			main_img end
+			<h3>{$home_one['0'].title}</h3>
+			<p>{$home_one['0'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$home_one['0'].description}</p>
+
+		</div>
+		<div class="main_c">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			main_img end
+			<h3>{$home_one['1'].title}</h3>
+			<p>{$home_one['1'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$home_one['1'].description}</p>
+		</div>
+		<div class="main_r">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			main_img end
+			<h3>{$home_one['2'].title}</h3>
+			<p>{$home_one['2'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$home_one['2'].description}</p>
+		</div> -->
+	</div>
+
+</div>
+<div class="zt pic" name="zt1">
+	<a href="#"><img src="__STATIC__/fouroad/img/scxh.png"
+		style="width: 100%; height: 100%"></a>
+</div>
+<div class="content">
+	<div id="con1">
+
+		<div class="main_l">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_one['0'].title}</h3>
+			<p>{$home_one['0'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">
+				<input class="butt2" type="submit" value="报名参会">
+			</p>
+
+		</div>
+		<div class="main_c">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_one['1'].title}</h3>
+			<p>{$home_one['1'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">
+				<input class="butt2" type="submit" value="报名参会">
+			</p>
+		</div>
+		<div class="main_r">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_one['2'].title}</h3>
+			<p>{$home_one['2'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">
+				<input class="butt2" type="submit" value="报名参会">
+			</p>
+		</div>
+
+	</div>
+
+</div>
+<div class="zt pic2">
+	<a name="zt">
+		<div class="zt_box">
+			<div class="zt_box_m">
+				<p>
+					Shopex合作伙伴助您实现卓越运营伙伴的支持，让我们不断向前 </br> <input class="butt2" type="submit"
+						value="了解如何招募加入" style="margin-top: 35px;">
+				</p>
+			</div>
+		</div>
+	</a>
+
+</div>
+<div class="content">
+	<div id="con1">
+		<h1>{$category['_']['0'].title}</h1>
+		<h4>浏览我们的产品与解决方案，并了解 Shopex 能够为您做些什么</h4>
+		<div class="main_l">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_one['0'].title}</h3>
+			<p>{$home_one['0'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$home_one['0'].description}</p>
+
+		</div>
+		<div class="main_c">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_one['1'].title}</h3>
+			<p>{$home_one['1'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$home_one['1'].description}</p>
+		</div>
+		<div class="main_r">
+			<div class="main_img">
+				<img src="__STATIC__/fouroad/img/pic_01.jpg">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_one['2'].title}</h3>
+			<p>{$home_one['2'].content}</p>
+			<p style="margin-top: 30px; color: #09F;">{$home_one['2'].description}</p>
+		</div>
+
+	</div>
+
+</div>
+<div class="zt pic">
+	<img src="__STATIC__/fouroad/img/scxh.png"
+		style="width: 100%; height: 100%">
+</div>
+<div class="content">
+	<div id="con1">
+		<h1>
+			<a name="al">{$category['_']['1'].title}</a>
+		</h1>
+		<h4>13年沉淀、23个行业、8种业态、160万企业使用过Shopex提供的优质产品及专业服务</h4>
+		<div class="main_1">
+			<div class="main_img kh">
+				<img src="__ROOT__{$home_two['2'].cover_path}"
+					style="width: 210px; height: 210px; border: 1px solid #ccc">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_two['2'].title}</h3>
+			<p>{$home_two['2'].content}</p>
+
+		</div>
+		<div class="main_2">
+			<div class="main_img kh">
+				<img src="__ROOT__{$home_two['1'].cover_path}"
+					style="width: 210px; height: 210px; border: 1px solid #ccc">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_two['1'].title}</h3>
+			<p>{$home_two['1'].content}</p>
+		</div>
+		<div class="main_3">
+			<div class="main_img kh">
+				<img src="__ROOT__ . {$home_two['0'].cover_path}"
+					style="width: 210px; height: 210px; border: 1px solid #ccc">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_two['0'].title}</h3>
+			<p>{$home_two['0'].content}</p>
+		</div>
+		<div class="main_4">
+			<div class="main_img kh">
+				<img src="__ROOT__ . {$home_two['1'].cover_path}"
+					style="width: 210px; height: 210px; border: 1px solid #ccc">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_two['1'].title}</h3>
+			<p>{$home_two['1'].content}</p>
+		</div>
+		<div class="main_5">
+			<div class="main_img kh">
+				<img src="__ROOT__ . {$home_two['2'].cover_path}"
+					style="width: 210px; height: 210px; border: 1px solid #ccc">
+				<div class="show">
+					<span class="imgArea"> <a title="了解详情"
+						href="http://sc.chinaz.com/"><img
+							src="__STATIC__/fouroad/img/zoom.png"
+							style="width: 50px; height: 50px;"></a>
+					</span>
+				</div>
+			</div>
+			<!--main_img end-->
+			<h3>{$home_two['2'].title}</h3>
+			<p>{$home_two['2'].content}</p>
+		</div>
+	</div>
+
+</div>
+</block>
