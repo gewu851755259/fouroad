@@ -14,7 +14,7 @@ use OT\DataDictionary;
  * 前台首页控制器
  * 主要获取首页聚合数据
  */
-class IndexController extends HomeController {
+class ProductController extends HomeController {
 	
 	// 系统首页
 	public function index() {
@@ -70,6 +70,16 @@ class IndexController extends HomeController {
 		$this->assign ( 'home_adv', $home_adv ); // 主页轮播图
 		$this->display ();
 	}
+	
+	// 产品详情界面
+	public function details() {
+		//
+		$home_adv = $this->getBanners();
+		$this->assign ( 'home_adv', $home_adv ); // 主页轮播图
+	    $this->display();
+	}
+	
+	
 	
 	private function getBanners(){
 		$home_adv = D ( 'Document' )->lists ( '43' );

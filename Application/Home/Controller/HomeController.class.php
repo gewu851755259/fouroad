@@ -18,8 +18,7 @@ class HomeController extends Controller {
 
 	/* 空操作，用于输出404页面 */
 	public function _empty(){
-		echo "执行了空操作";
-		$this->redirect('Article/index?category=blog');
+		$this->redirect('Introduce/index');
 	}
 
 

@@ -19,19 +19,10 @@ class IntroduceController extends HomeController {
 	// 公司介绍
     public function index(){
 
-    	echo "公司介绍";
-    	echo "<br />";
-    	
         $category = D('Category')->getTree(39);
-        print_r($category);
-        echo "<br />";
         $condition = array();
         $condition['category_id'] = 39;
         $lists    = D('Document')->where($condition)->select();
-        var_dump($lists);
-        echo "<br />";
-        
-        echo $lists[0]['id']."<br />";
         $info = D('Document')->detail($lists[0]['id']);
         if(!$info){
         	$this->error($Document->getError());

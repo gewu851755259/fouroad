@@ -1,57 +1,100 @@
-
-    <!-- 底部
+<!-- 底部
     ================================================== -->
-    <div class="wrap">
-    <div class="copyright">
-            
-            <div class="cr">
-                <h1>了解我们如何帮助您实现目标？</h1>
-                   <div class="cr_l">
-                     <div class="cr_l_l">
-                          <h3><span>联系我们</span></h3>
-                          <ul>
-                             <li><a href="#">联系销售代表</a></li>
-                             <li><a href="#">查询或称为合作伙伴</a></li>
-                             <li><a href="#">参加产品培训</a></li>
-                             <li><a href="#">致电反馈</a></li>
-                          </ul>
-                    </div>
-            
-                    <div class="cr_l_c">
-                          <h3><span>关于我们</span></h3>
-                          <ul>
-                                <li><a href="about.html">公司简介</a></li>
-                                <li><a href="about.html">企业文化</a></li>
-                                 <li><a href="about.html">公司荣誉</a></li>
-                                <li><a href="#">媒体报道</a></li>
-                           </ul>
-                    </div>
-            
-                    <div class="cr_l_r">
-                         <h3><span>常用链接</span></h3>
-                         <ul>
-                              <li><a href="#">操盘手学院</a></li>
-                              <li><a href="#">法律声明</a></li>
-                              <li><a href="#">网站地图</a></li>
-                              <li><a href="#">申请友情链接</a></li>
-                         </ul>
-                     </div>
-            </div>
-            
-            <div class="cr_r">
-                <p>微信扫一扫</br>免费赠送开通云生意</p>
-            </div>
-            </div>
-            
-            <div class="cr_b">
-                <p>地址：山西省晋城市凤台东街2137号万通商业广场1号楼6层</br>邮政编码：048000 电话：0356-6998003</p>
-            </div>
-        </div>
+<div class="wrap">
+	<div class="copyright">
+
+		<div class="cr">
+			<h1>了解我们如何帮助您实现目标？</h1>
+			<div class="cr_l">
+				<div class="cr_l_l">
+					<h3>
+						<span>联系我们</span>
+					</h3>
+					<ul>
+						<li><a href="#">联系销售代表</a></li>
+						<li><a href="#">查询或称为合作伙伴</a></li>
+						<li><a href="#">参加产品培训</a></li>
+						<li><a href="#">致电反馈</a></li>
+					</ul>
+				</div>
+
+				<div class="cr_l_c">
+					<h3>
+						<span>关于我们</span>
+					</h3>
+					<ul>
+						<li><a href="{:U('Aboutus/index')}">公司简介</a></li>
+						<li><a href="{:U('Aboutus/index')}">企业文化</a></li>
+						<li><a href="{:U('Aboutus/index')}">公司荣誉</a></li>
+						<li><a href="#">媒体报道</a></li>
+					</ul>
+				</div>
+
+				<div class="cr_l_r">
+					<h3>
+						<span>常用链接</span>
+					</h3>
+					<ul>
+						<li><a href="#">操盘手学院</a></li>
+						<li><a href="#">法律声明</a></li>
+						<li><a href="#">网站地图</a></li>
+						<li><a href="#">申请友情链接</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="cr_r">
+				<p>
+					微信扫一扫</br>免费赠送开通云生意
+				</p>
+			</div>
+		</div>
+
+		<div class="cr_b">
+			<p>
+				地址：山西省晋城市凤台东街2137号万通商业广场1号楼6层</br>邮政编码：048000 电话：0356-6998003
+			</p>
+		</div>
+	</div>
+
+	<!-- 悬浮窗代码 -->
+	<div class="suspend">
+		<dl>
+			<dt class="IE6PNG"></dt>
+			<dd class="suspendQQ">
+				<a target="_blank"
+					href="http://wpa.qq.com/msgrd?v=3&uin=123456789&site=qq&menu=yes"></a>
+			</dd>
+			<dd class="suspendTel">
+				<a href="javascript:void(0);"></a>
+			</dd>
+
+		</dl>
+
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			$(".suspend").mouseover(function() {
+				$(this).stop();
+				$(this).animate({
+					width : 160
+				}, 400);
+			});
+			$(".suspend").mouseout(function() {
+				$(this).stop();
+				$(this).animate({
+					width : 40
+				}, 400);
+			});
+		});
+	</script>
 </div>
 <!-- <include file="Public/var"/> -->
-<block name="script"></block> <!-- 用于加载js代码 -->
+<block name="script"></block>
+<!-- 用于加载js代码 -->
 <!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
 {:hook('pageFooter', 'widget')}
-<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
+<div class="hidden">
+	<!-- 用于加载统计代码等隐藏元素 -->
 	<block name="hidden"></block>
 </div>
