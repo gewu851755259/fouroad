@@ -1,34 +1,68 @@
 <!-- 这是导航header -->
+<block name="style">
+<style type="text/css">.nav-right > li > .dropdown-menu:before {
+  position: absolute;
+  top: -7px;
+  left: 9px;
+  display: inline-block;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-left: 7px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  content: '';
+}</style>
+
+<style type="text/css">.nav-right > li > .dropdown-menu:after {
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  display: inline-block;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  border-left: 6px solid transparent;
+  content: '';
+}</style>
+</block>
 <div class="wrap">
-	<div class="header">
-		<div class="logo">
-			<a href="index.html"><img src="__STATIC__/fouroad/img/logo.png"
-				style="width: 178px; height: 48px;"></a>
+<div class="header">
+<div class="logo"><a href="index.html"><img
+	src="__STATIC__/fouroad/img/logo.png"
+	style="width: 178px; height: 48px;"></a></div>
+<div class="menu">
+<ul class="nav">
+	<think:nav class="think_nav_menu" name="nav" tree="true">
+		<eq name="nav.pid" value="0">
+		<li><a href="{$nav.url|get_nav_url}" target="<eq
+			name='nav.target' value='1'>_blank<else />_self</eq>">{$nav.title}</a> <eq
+			name="nav.id" value="5">
+		<div class="box">
+		<ul>
+			<volist name="nav._" id="subnav">
+			<li><a href="{$subnav.url|get_nav_url}" target="<eq
+				name='nav.target' value='1'>_blank<else />_self</eq>">{$subnav.title}</a></li>
+			</volist>
+		</ul>
 		</div>
-		<div class="menu">
-			<ul class="nav">
-				<think:nav class="think_nav_menu" name="nav" tree="true">
-					<eq name="nav.pid" value="0">
-					<li><a href="{$nav.url|get_nav_url}"
-						target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
-						<eq name="nav.id" value="5">
-						<div class="box">
-							<ul>
-								<volist name="nav._" id="subnav">
-								<li><a href="{$subnav.url|get_nav_url}"
-									target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$subnav.title}</a></li>
-								</volist>
-							</ul>
-						</div>
-						</eq></li>
-					</eq>
-				</think:nav>
-			</ul>
-		</div>
-		<div class="butt">
-			<a class="butt_an" type="button"  href="{:U('User/login')}">登陆 </a>
-			<a class="butt_an" type="button" href="{:U('User/register')}">注册</a>
-		</div>
-	
-	</div>
+		</eq></li>
+		</eq>
+	</think:nav>
+</ul>
+</div>
+<div class="butt">
+<if condition="is_login()">
+<ul class="nav-right" style="margin-right: 0">
+	<li class="dropdown">
+	<a href="#" class="dropdown-toggle"
+		data-toggle="dropdown" style="padding-left: 0; padding-right: 0">{:get_username()}
+	<b class="caret"></b></a>
+	<ul class="dropdown-menu">
+		<li><a href="{:U('User/profile')}">修改密码</a></li>
+		<li><a href="{:U('User/logout')}">退出</a></li>
+	</ul>
+	</li>
+</ul>
+<else /> <a class="butt_an" type="button" href="{:U('User/login')}">登陆</a>
+<a class="butt_an" type="button" href="{:U('User/register')}">注册</a> </if></div>
+
+</div>
 </div>
