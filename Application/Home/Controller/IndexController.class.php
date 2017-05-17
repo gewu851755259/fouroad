@@ -26,14 +26,8 @@ class IndexController extends HomeController {
 		$this->assign ( 'lists', $lists ); // 列表
 		$this->assign ( 'page', D ( 'Document' )->page ); // 分页
 		
-		$index_cate = D ( 'Category' )->getChildrenId ( '40' );
-		$ids = explode ( ',', $index_cate );
-		if ($ids ['0']) {
-			$home_one = D ( 'Document' )->lists ( $ids ['0'] );
-		}
-		if ($ids ['1']) {
-			$home_two = D ( 'Document' )->lists ( $ids ['1'] );
-		}
+		$home_one = D ( 'Document' )->lists ( '41' );
+		$home_two = D ( 'Document' )->lists ( '42' );
 		foreach ( $home_one as $key => $value ) {
 			$info = D ( 'Document' )->detail ( $value ['id'] );
 			if ($value ['cover_id'] > 0) {

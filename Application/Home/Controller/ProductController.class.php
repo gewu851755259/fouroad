@@ -18,23 +18,10 @@ class ProductController extends HomeController {
 	
 	// 系统首页
 	public function index() {
-		
-		$category = D ( 'Category' )->getTree ( '40' );
-		$lists = D ( 'Document' )->lists ( null );
-		
-		$this->assign ( 'category', $category ); // 栏目
-		$this->assign ( 'lists', $lists ); // 列表
-		$this->assign ( 'page', D ( 'Document' )->page ); // 分页
-		
-		$index_cate = D ( 'Category' )->getChildrenId ( '40' );
-		$ids = explode ( ',', $index_cate );
-		if ($ids ['0']) {
-			$home_one = D ( 'Document' )->lists ( $ids ['0'] );
-		}
-		if ($ids ['1']) {
-			$home_two = D ( 'Document' )->lists ( $ids ['1'] );
-		}
-		foreach ( $home_one as $key => $value ) {
+		// 获取云产品下的内容
+		$products = D ( 'Document' )->lists ( '44' , '`level` DESC' );
+		// 合并内容以及内容详情
+		foreach ( $products as $key => $value ) {
 			$info = D ( 'Document' )->detail ( $value ['id'] );
 			if ($value ['cover_id'] > 0) {
 				$picture_info = D ( 'Picture' )->getPictureInfo ( $value ['cover_id'] );
@@ -45,43 +32,46 @@ class ProductController extends HomeController {
 				}
 			}
 			$data = array_merge ( $value, $info );
-			$home_one [$key] = $data;
-		}
-		foreach ( $home_two as $key => $value ) {
-			$info = D ( 'Document' )->detail ( $value ['id'] );
-			if ($value ['cover_id'] > 0) {
-				$picture_info = D ( 'Picture' )->getPictureInfo ( $value ['cover_id'] );
-				if ($picture_info) {
-					$value ['cover_path'] = $picture_info ['path'];
-				} else {
-					$value ['cover_path'] = '';
-				}
-			}
-			$data = array_merge ( $value, $info );
-			$home_two [$key] = $data;
+			$products [$key] = $data;
 		}
 		
-		// 
-		$home_adv = $this->getBanners();
+		//
+		$home_adv = $this->getBanners ();
 		
-		
-		$this->assign ( 'home_one', $home_one ); // 主页文档1
-		$this->assign ( 'home_two', $home_two ); // 主页文档2
+		$this->assign ( 'products', $products ); // 云产品内容
 		$this->assign ( 'home_adv', $home_adv ); // 主页轮播图
 		$this->display ();
 	}
 	
 	// 产品详情界面
 	public function details() {
+		// 获取云产品下的内容
+		$products = D ( 'Document' )->lists ( '44' , '`level` DESC' );
+		// 合并内容以及内容详情
+		foreach ( $products as $key => $value ) {
+			$info = D ( 'Document' )->detail ( $value ['id'] );
+			if ($value ['cover_id'] > 0) {
+				$picture_info = D ( 'Picture' )->getPictureInfo ( $value ['cover_id'] );
+				if ($picture_info) {
+					$value ['cover_path'] = $picture_info ['path'];
+				} else {
+					$value ['cover_path'] = '';
+				}
+			}
+			$data = array_merge ( $value, $info );
+			$products [$key] = $data;
+		}
+		
 		//
-		$home_adv = $this->getBanners();
+		$home_adv = $this->getBanners ();
+		
+		$this->assign ( 'products', $products ); // 云产品内容
 		$this->assign ( 'home_adv', $home_adv ); // 主页轮播图
-	    $this->display();
+		$this->display ();
 	}
 	
-	
-	
-	private function getBanners(){
+	// 获取轮播图
+	private function getBanners() {
 		$home_adv = D ( 'Document' )->lists ( '43' );
 		foreach ( $home_adv as $key => $value ) {
 			if ($value ['cover_id'] > 0) {
@@ -91,7 +81,7 @@ class ProductController extends HomeController {
 				} else {
 					$value ['cover_path'] = '';
 				}
-				$home_adv[$key] = $value;
+				$home_adv [$key] = $value;
 			}
 		}
 		return $home_adv;
