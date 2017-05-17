@@ -22,7 +22,35 @@
 
 <!-- 详细页面主要内容代码 -->
 <div class="content_product">
-	<div class="content_product_g">
+	<volist name="products" id="product"> 
+		<eq name="product.description" value="1">
+			<div class="content_product_g">
+				<div class="content">
+					<div class="content_product_img">
+						<img src="__ROOT__{$product.cover_path}">
+					</div>
+					<div class="content_product_word">
+						<h2>{$product.title}</h2>
+						<p>{$product.content}</p>
+					</div>
+				</div>
+			</div>
+		</eq>
+		<eq name="product.description" value="2">
+			<div class="content_product_w">
+				<div class="content">
+					<div class="content_product_word">
+						<h2>{$product.title}</h2>
+						<p>{$product.content}</p>
+					</div>
+					<div class="content_product_img">
+						<img src="__ROOT__{$product.cover_path}">
+					</div>
+				</div>
+			</div>
+		</eq>
+	</volist>
+	<!-- <div class="content_product_g">
 		<div class="content">
 			<div class="content_product_img">
 				<img src="__STATIC__/fouroad/img/_2.jpg">
@@ -65,7 +93,7 @@
 				<img src="__STATIC__/fouroad/img/_4.jpg">
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<p style="margin: 0 auto; width: 200px;">
 		<input class="butt2" value="在线QQ咨询" type="submit"

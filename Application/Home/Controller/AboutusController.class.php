@@ -17,11 +17,21 @@ class AboutusController extends HomeController {
 	
 	// 关于我们首页
 	public function index() {
+		// 获取关于我们下的子分类
+		$category = D ( 'Category' )->getTree ( '45' );
+		
+		$this->assign ( 'category', $category );
+		
 		$this->display ();
 	}
 	
 	// 关于我们新闻列表
 	public function news_list() {
+		// 获取关于我们下的子分类
+		$category = D ( 'Category' )->getTree ( '45' );
+		
+		$this->assign ( 'category', $category );
+		
 		$this->display ();
 	}
 	
@@ -37,12 +47,6 @@ class AboutusController extends HomeController {
 		$this->assign ( 'home_adv', $home_adv ); // 主页轮播图
 		$this->display ();
 	}
-	
-	
-	
-	
-	
-	
 	private function getBanners() {
 		$home_adv = D ( 'Document' )->lists ( '43' );
 		foreach ( $home_adv as $key => $value ) {
